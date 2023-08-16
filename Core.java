@@ -26,7 +26,7 @@ public class Core {
                 return Double.toString(ans);
             }
             case Core.DIVIDE -> {
-                ans = a + b;
+                ans = a / b;
                 return Double.toString(ans);
             }
             case Core.MOD -> {

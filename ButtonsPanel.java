@@ -152,17 +152,28 @@ public class ButtonsPanel extends JPanel implements ActionListener{
         } else if(e.getSource() == number9){
             ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "9");
         } else if(e.getSource() == plus){
-            // Código para el botón plus
+            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.operation = Core.SUM;
+            ResultPanel.resultLabel.setText("");
         } else if(e.getSource() == minus){
-            // Código para el botón minus
+            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.operation = Core.SUBTRACT;
+            ResultPanel.resultLabel.setText("");
         } else if(e.getSource() == multiply){
-            // Código para el botón multiply
+            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.operation = Core.MULTIPLY;
+            ResultPanel.resultLabel.setText("");
         } else if(e.getSource() == divide){
-            // Código para el botón divide
+            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.operation = Core.DIVIDE;
+            ResultPanel.resultLabel.setText("");
         } else if(e.getSource() == mod){
-            // Código para el botón mod
+            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.operation = Core.MOD;
+            ResultPanel.resultLabel.setText("");
         } else if(e.getSource() == equals){
-            // Código para el botón equals
+            Core.b = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            ResultPanel.resultLabel.setText(Core.calculate());
         } else if(e.getSource() == comma){
             ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + ",");
         } else if(e.getSource() == switchSign){
