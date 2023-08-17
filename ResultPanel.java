@@ -12,7 +12,7 @@ public class ResultPanel extends JPanel{
     public static JLabel littleLabel;
 
     ResultPanel(){
-        //this.setBounds(0, 0, 350, 150);
+
         this.setPreferredSize(new Dimension(350, 150));
         this.setLayout(new BorderLayout());
         this.setBackground(new Color(30, 30, 30));
