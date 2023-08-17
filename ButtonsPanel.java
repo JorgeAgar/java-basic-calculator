@@ -107,6 +107,7 @@ public class ButtonsPanel extends JPanel implements ActionListener{
     }
 
     public void addButtons(){
+
         this.add(switchSign);
         this.add(mod);
         this.add(clear);
@@ -131,6 +132,7 @@ public class ButtonsPanel extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if(e.getSource() == number0){
             ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "0");
         } else if(e.getSource() == number1){
@@ -177,7 +179,11 @@ public class ButtonsPanel extends JPanel implements ActionListener{
         } else if(e.getSource() == comma){
             ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + ",");
         } else if(e.getSource() == switchSign){
-            // Código para el botón switchSign
+            if(ResultPanel.resultLabel.getText().charAt(0) == '-'){
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText().substring(1));
+            } else{
+                ResultPanel.resultLabel.setText("-" + ResultPanel.resultLabel.getText());
+            }
         } else if(e.getSource() == delete){
             ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText().substring(0, ResultPanel.resultLabel.getText().length()-1));
         } else if(e.getSource() == clear){
