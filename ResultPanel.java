@@ -18,7 +18,7 @@ public class ResultPanel extends JPanel{
         this.setBackground(Color.LIGHT_GRAY);
         
         resultLabel = new JLabel("0");
-        littleLabel = new JLabel("little label");
+        littleLabel = new JLabel("");
         resultLabel.setForeground(Color.BLACK);
         resultLabel.setFont(new Font("Monospace", Font.BOLD, 50));
         littleLabel.setForeground(Color.GRAY);

@@ -29,6 +29,8 @@ public class ButtonsPanel extends JPanel implements ActionListener{
     JButton switchSign;
     JButton delete;
     JButton clear;
+
+    boolean clearCEMode;
     
     ButtonsPanel(){
         //this.setBounds(0, 150, 350, 350);
@@ -39,6 +41,8 @@ public class ButtonsPanel extends JPanel implements ActionListener{
         addButtons();
 
         this.setVisible(true);
+
+        clearCEMode = false;
     }
 
     public void setupButtons(){
@@ -91,7 +95,7 @@ public class ButtonsPanel extends JPanel implements ActionListener{
         equals = new JButton("=");
         equals.setFocusable(false);
         equals.addActionListener(this);
-        comma = new JButton(",");
+        comma = new JButton(".");
         comma.setFocusable(false);
         comma.addActionListener(this);
         switchSign = new JButton("+/-");
@@ -134,59 +138,166 @@ public class ButtonsPanel extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == number0){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "0");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("0");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "0");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+            
         } else if(e.getSource() == number1){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "1");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("1");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "1");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number2){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "2");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("2");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "2");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number3){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "3");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("3");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "3");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number4){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "4");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("4");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "4");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number5){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "5");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("5");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "5");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number6){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "6");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("6");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "6");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number7){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "7");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("7");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "7");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number8){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "8");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("8");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "8");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == number9){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "9");
+            if(ResultPanel.resultLabel.getText().equals("0")){
+                ResultPanel.resultLabel.setText("9");
+            } else{
+                ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + "9");
+            }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == plus){
             Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
             Core.operation = Core.SUM;
-            ResultPanel.resultLabel.setText("");
+            ResultPanel.resultLabel.setText("0");
+            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " + ");
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == minus){
             Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
             Core.operation = Core.SUBTRACT;
-            ResultPanel.resultLabel.setText("");
+            ResultPanel.resultLabel.setText("0");
+            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " - ");
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == multiply){
             Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
             Core.operation = Core.MULTIPLY;
-            ResultPanel.resultLabel.setText("");
+            ResultPanel.resultLabel.setText("0");
+            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " * ");
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == divide){
             Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
             Core.operation = Core.DIVIDE;
-            ResultPanel.resultLabel.setText("");
+            ResultPanel.resultLabel.setText("0");
+            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " / ");
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == mod){
             Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
             Core.operation = Core.MOD;
-            ResultPanel.resultLabel.setText("");
+            ResultPanel.resultLabel.setText("0");
+            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " mod ");
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == equals){
             Core.b = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
             ResultPanel.resultLabel.setText(Core.calculate());
+            ResultPanel.littleLabel.setText(ResultPanel.littleLabel.getText() + Double.toString(Core.b) + " =");
+            clearCEMode = false;
+            clear.setText("C");
+
         } else if(e.getSource() == comma){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + ",");
+            if(!ResultPanel.resultLabel.getText().contains(".")) {ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText() + ".");}
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == switchSign){
             if(ResultPanel.resultLabel.getText().charAt(0) == '-'){
                 ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText().substring(1));
             } else{
                 ResultPanel.resultLabel.setText("-" + ResultPanel.resultLabel.getText());
             }
+            clearCEMode = true;
+            clear.setText("CE");
+
         } else if(e.getSource() == delete){
             ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText().substring(0, ResultPanel.resultLabel.getText().length()-1));
+
         } else if(e.getSource() == clear){
+            if(!clearCEMode){
+                ResultPanel.littleLabel.setText("");
+            } else{
+                clearCEMode = false;
+                clear.setText("C");
+            }
             ResultPanel.resultLabel.setText("0");
         }
     }    
