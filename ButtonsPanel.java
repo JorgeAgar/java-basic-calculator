@@ -1,10 +1,12 @@
 import java.awt.Color;
+import java.awt.Font;
 /* import java.awt.Dimension;
 import java.awt.FlowLayout; */
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 public class ButtonsPanel extends JPanel implements ActionListener{
@@ -50,63 +52,162 @@ public class ButtonsPanel extends JPanel implements ActionListener{
         number0 = new JButton("0");
         number0.setFocusable(false);
         number0.addActionListener(this);
+        number0.setBackground(Color.BLACK);
+        number0.setForeground(Color.WHITE);
+        number0.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number0.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number1 = new JButton("1");
         number1.setFocusable(false);
         number1.addActionListener(this);
+        number1.setBackground(Color.BLACK);
+        number1.setForeground(Color.WHITE);
+        number1.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number1.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number2 = new JButton("2");
         number2.setFocusable(false);
         number2.addActionListener(this);
+        number2.setBackground(Color.BLACK);
+        number2.setForeground(Color.WHITE);
+        number2.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number2.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number3 = new JButton("3");
         number3.setFocusable(false);
         number3.addActionListener(this);
+        number3.setBackground(Color.BLACK);
+        number3.setForeground(Color.WHITE);
+        number3.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number3.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number4 = new JButton("4");
         number4.setFocusable(false);
         number4.addActionListener(this);
+        number4.setBackground(Color.BLACK);
+        number4.setForeground(Color.WHITE);
+        number4.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number4.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number5 = new JButton("5");
         number5.setFocusable(false);
         number5.addActionListener(this);
+        number5.setBackground(Color.BLACK);
+        number5.setForeground(Color.WHITE);
+        number5.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number5.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number6 = new JButton("6");
         number6.setFocusable(false);
         number6.addActionListener(this);
+        number6.setBackground(Color.BLACK);
+        number6.setForeground(Color.WHITE);
+        number6.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number6.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number7 = new JButton("7");
         number7.setFocusable(false);
         number7.addActionListener(this);
+        number7.setBackground(Color.BLACK);
+        number7.setForeground(Color.WHITE);
+        number7.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number7.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number8 = new JButton("8");
         number8.setFocusable(false);
         number8.addActionListener(this);
+        number8.setBackground(Color.BLACK);
+        number8.setForeground(Color.WHITE);
+        number8.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number8.setFont(new Font("Monospace", Font.BOLD, 30));
+
         number9 = new JButton("9");
         number9.setFocusable(false);
         number9.addActionListener(this);
+        number9.setBackground(Color.BLACK);
+        number9.setForeground(Color.WHITE);
+        number9.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 1));
+        number9.setFont(new Font("Monospace", Font.BOLD, 30));
+
         plus = new JButton("+");
         plus.setFocusable(false);
         plus.addActionListener(this);
+        plus.setBackground(Color.DARK_GRAY);
+        plus.setForeground(Color.WHITE);
+        plus.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        plus.setFont(new Font("Monospace", Font.BOLD, 30));
+
         minus = new JButton("-");
         minus.setFocusable(false);
         minus.addActionListener(this);
+        minus.setBackground(Color.DARK_GRAY);
+        minus.setForeground(Color.WHITE);
+        minus.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        minus.setFont(new Font("Monospace", Font.BOLD, 30));
+
         multiply = new JButton("*");
         multiply.setFocusable(false);
         multiply.addActionListener(this);
+        multiply.setBackground(Color.DARK_GRAY);
+        multiply.setForeground(Color.WHITE);
+        multiply.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        multiply.setFont(new Font("Monospace", Font.BOLD, 30));
+
         divide = new JButton("/");
         divide.setFocusable(false);
         divide.addActionListener(this);
+        divide.setBackground(Color.DARK_GRAY);
+        divide.setForeground(Color.WHITE);
+        divide.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        divide.setFont(new Font("Monospace", Font.BOLD, 30));
+
         mod = new JButton("mod");
         mod.setFocusable(false);
         mod.addActionListener(this);
+        mod.setBackground(Color.DARK_GRAY);
+        mod.setForeground(Color.WHITE);
+        mod.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        mod.setFont(new Font("Monospace", Font.BOLD, 30));
+
         equals = new JButton("=");
         equals.setFocusable(false);
         equals.addActionListener(this);
+        equals.setBackground(new Color(0, 0, 150));
+        equals.setForeground(Color.WHITE);
+        equals.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        equals.setFont(new Font("Monospace", Font.BOLD, 30));
+
         comma = new JButton(".");
         comma.setFocusable(false);
         comma.addActionListener(this);
+        comma.setBackground(Color.DARK_GRAY);
+        comma.setForeground(Color.WHITE);
+        comma.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        comma.setFont(new Font("Monospace", Font.BOLD, 30));
+
         switchSign = new JButton("+/-");
         switchSign.setFocusable(false);
         switchSign.addActionListener(this);
+        switchSign.setBackground(Color.DARK_GRAY);
+        switchSign.setForeground(Color.WHITE);
+        switchSign.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        switchSign.setFont(new Font("Monospace", Font.BOLD, 30));
+
         delete = new JButton("Del");
         delete.setFocusable(false);
         delete.addActionListener(this);
+        delete.setBackground(Color.DARK_GRAY);
+        delete.setForeground(Color.WHITE);
+        delete.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        delete.setFont(new Font("Monospace", Font.BOLD, 30));
+
         clear = new JButton("C");
         clear.setFocusable(false);
         clear.addActionListener(this);
+        clear.setBackground(Color.DARK_GRAY);
+        clear.setForeground(Color.WHITE);
+        clear.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        clear.setFont(new Font("Monospace", Font.BOLD, 30));
 
     }
 
