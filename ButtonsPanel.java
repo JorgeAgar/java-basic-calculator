@@ -228,49 +228,55 @@ public class ButtonsPanel extends JPanel implements ActionListener{
             clear.setText("CE");
 
         } else if(e.getSource() == plus){
-            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.saveA();
             Core.operation = Core.SUM;
             ResultPanel.resultLabel.setText("0");
-            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " + ");
+            if(Core.aIsInteger) {ResultPanel.littleLabel.setText(Long.toString(Core.longA) + " + ");}
+            else {ResultPanel.littleLabel.setText(Double.toString(Core.a) + " + ");}
             clearCEMode = true;
             clear.setText("CE");
 
         } else if(e.getSource() == minus){
-            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.saveA();
             Core.operation = Core.SUBTRACT;
             ResultPanel.resultLabel.setText("0");
-            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " - ");
+            if(Core.aIsInteger) {ResultPanel.littleLabel.setText(Long.toString(Core.longA) + " - ");}
+            else {ResultPanel.littleLabel.setText(Double.toString(Core.a) + " - ");}
             clearCEMode = true;
             clear.setText("CE");
 
         } else if(e.getSource() == multiply){
-            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.saveA();
             Core.operation = Core.MULTIPLY;
             ResultPanel.resultLabel.setText("0");
-            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " * ");
+            if(Core.aIsInteger) {ResultPanel.littleLabel.setText(Long.toString(Core.longA) + " * ");}
+            else {ResultPanel.littleLabel.setText(Double.toString(Core.a) + " * ");}
             clearCEMode = true;
             clear.setText("CE");
 
         } else if(e.getSource() == divide){
-            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.saveA();
             Core.operation = Core.DIVIDE;
             ResultPanel.resultLabel.setText("0");
-            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " / ");
+            if(Core.aIsInteger) {ResultPanel.littleLabel.setText(Long.toString(Core.longA) + " / ");}
+            else {ResultPanel.littleLabel.setText(Double.toString(Core.a) + " / ");}
             clearCEMode = true;
             clear.setText("CE");
 
         } else if(e.getSource() == mod){
-            Core.a = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.saveA();
             Core.operation = Core.MOD;
             ResultPanel.resultLabel.setText("0");
-            ResultPanel.littleLabel.setText(Double.toString(Core.a) + " mod ");
+            if(Core.aIsInteger) {ResultPanel.littleLabel.setText(Long.toString(Core.longA) + " mod ");}
+            else {ResultPanel.littleLabel.setText(Double.toString(Core.a) + " mod ");}
             clearCEMode = true;
             clear.setText("CE");
 
         } else if(e.getSource() == equals){
-            Core.b = Double.parseDouble(ResultPanel.resultLabel.getText().trim());
+            Core.saveB();
             ResultPanel.resultLabel.setText(Core.calculate());
-            ResultPanel.littleLabel.setText(ResultPanel.littleLabel.getText() + Double.toString(Core.b) + " =");
+            if(Core.bIsInteger) {ResultPanel.littleLabel.setText(ResultPanel.littleLabel.getText() + Long.toString(Core.longB) + " =");}
+            else {ResultPanel.littleLabel.setText(ResultPanel.littleLabel.getText() + Double.toString(Core.b) + " =");}
             clearCEMode = false;
             clear.setText("C");
 
@@ -289,7 +295,7 @@ public class ButtonsPanel extends JPanel implements ActionListener{
             clear.setText("CE");
 
         } else if(e.getSource() == delete){
-            ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText().substring(0, ResultPanel.resultLabel.getText().length()-1));
+            if(!ResultPanel.resultLabel.getText().isEmpty()) {ResultPanel.resultLabel.setText(ResultPanel.resultLabel.getText().substring(0, ResultPanel.resultLabel.getText().length()-1));}
 
         } else if(e.getSource() == clear){
             if(!clearCEMode){

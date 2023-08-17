@@ -11,31 +11,133 @@ public class Core {
     public static double b;
     public static double ans;
 
+    public static long longA;
+    public static long longB;
+    public static long longAns;
+
+    public static boolean aIsInteger;
+    public static boolean bIsInteger;
+
     public static String calculate(){
         switch(operation){
             case Core.SUM -> {
-                ans = a + b;
-                return Double.toString(ans);
+                if(aIsInteger && bIsInteger){
+                    longAns = longA + longB;
+                    return Long.toString(longAns);
+                } else if(aIsInteger && !bIsInteger){
+                    ans = longA + b;
+                    return Double.toString(ans);
+                } else if(!aIsInteger && bIsInteger){
+                    ans = a + longB;
+                    return Double.toString(ans);
+                } else{
+                    ans = a + b;
+                    return Double.toString(ans);
+                }
             }
+
             case Core.SUBTRACT -> {
-                ans = a - b;
-                return Double.toString(ans);
+                if(aIsInteger && bIsInteger){
+                    longAns = longA - longB;
+                    return Long.toString(longAns);
+                } else if(aIsInteger && !bIsInteger){
+                    ans = longA - b;
+                    return Double.toString(ans);
+                } else if(!aIsInteger && bIsInteger){
+                    ans = a - longB;
+                    return Double.toString(ans);
+                } else{
+                    ans = a - b;
+                    return Double.toString(ans);
+                }
             }
+
             case Core.MULTIPLY -> {
-                ans = a * b;
-                return Double.toString(ans);
+                if(aIsInteger && bIsInteger){
+                    longAns = longA * longB;
+                    return Long.toString(longAns);
+                } else if(aIsInteger && !bIsInteger){
+                    ans = longA * b;
+                    return Double.toString(ans);
+                } else if(!aIsInteger && bIsInteger){
+                    ans = a * longB;
+                    return Double.toString(ans);
+                } else{
+                    ans = a * b;
+                    return Double.toString(ans);
+                }
             }
+
             case Core.DIVIDE -> {
-                ans = a / b;
-                return Double.toString(ans);
+                if(aIsInteger && bIsInteger){
+                    ans = longA / b; //at least 1 has to be double
+                } else if(aIsInteger && !bIsInteger){
+                    ans = longA / b;
+                } else if(!aIsInteger && bIsInteger){
+                    ans = a / longB;
+                } else{
+                    ans = a / b;
+                }
+
+                if(ans == Math.floor(ans)){
+                    longAns = (long)ans;
+                    return Long.toString(longAns);
+                } else{
+                    return Double.toString(ans);
+                }
             }
+
             case Core.MOD -> {
-                ans = a % b;
-                return Double.toString(ans);
+                if(aIsInteger && bIsInteger){
+                    longAns = longA % longB;
+                    return Long.toString(longAns);
+                } else if(aIsInteger && !bIsInteger){
+                    ans = longA % b;
+                    return Double.toString(ans);
+                } else if(!aIsInteger && bIsInteger){
+                    ans = a % longB;
+                    return Double.toString(ans);
+                } else{
+                    ans = a % b;
+                    return Double.toString(ans);
+                }
             }
+
             default -> {
                 return "Invalid Operation";
             }
+        }
+    }
+
+    public static void saveA(){
+        String SdisplayedNumber = ResultPanel.resultLabel.getText().trim();
+
+        a = Double.parseDouble(SdisplayedNumber);
+        
+        if(!SdisplayedNumber.contains(".")){
+            longA = Long.parseLong(SdisplayedNumber);
+            aIsInteger = true;
+        } else if (a == Math.floor(a)){
+            longA = Long.parseLong(SdisplayedNumber.substring(0, SdisplayedNumber.indexOf('.')));
+            aIsInteger = true;
+        } else{
+            aIsInteger = false;
+        }
+    }
+
+    public static void saveB(){
+        String SdisplayedNumber = ResultPanel.resultLabel.getText().trim();
+
+        b = Double.parseDouble(SdisplayedNumber);
+        
+        if(!SdisplayedNumber.contains(".")){
+            longB = Long.parseLong(SdisplayedNumber);
+            bIsInteger = true;
+        } else if (b == Math.floor(b)){
+            longB = Long.parseLong(SdisplayedNumber.substring(0, SdisplayedNumber.indexOf('.')));
+            bIsInteger = true;
+        } else{
+            bIsInteger = false;
         }
     }
 }
